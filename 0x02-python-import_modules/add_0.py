@@ -1,3 +1,3 @@
-#!/usr/bin/python3
+#!/bin/bash
 def add(a, b):
     return a + b
