@@ -3,6 +3,5 @@ def multiple_returns(sentence):
     if sentence == (" "):
         sentence[0] = None
     else:
-        print("l
-
-
+        new_tuple = (len(sentence), sentence[0])
+        return new_tuple
