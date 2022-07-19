@@ -5,4 +5,3 @@
 class Square:
     """Square is the name of the class"""
     pass
-    """pass executes nothing"""
