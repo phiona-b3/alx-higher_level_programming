@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""One can create their own class using the word
-followed by name.
-in this task, it is creating an empty class square"""
 class Square:
+    """python3 -c 'print(__import__("my_module").__doc__)'
+    python3 -c 'print(__import__("my_module").MyClass.__doc__)'
+    python3 -c 'print(__import__("my_module").my_function.__doc__)'
+    python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+    """
     pass
