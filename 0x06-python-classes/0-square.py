@@ -3,3 +3,4 @@
 class Square:
     """Square is the name of the class"""
     pass
+""" the pass command executes nothing"""
