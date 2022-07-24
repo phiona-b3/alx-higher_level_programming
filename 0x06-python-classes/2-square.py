@@ -9,7 +9,7 @@ class Square:
         self.__size = size
         """Check for the type of value in size"""
         if type(size) is not int:
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         """Check for the value of size"""
         if size < 0:
-            raise ValueError("Size must be >= 0")
+            raise ValueError("size must be >= 0")
