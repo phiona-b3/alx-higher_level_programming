@@ -16,7 +16,7 @@ class Square:
             raise ValueError("size must be >= 0")
 
 
-"""define a function called area"""
+    """define a function called area"""
 
 
 @classmethod
