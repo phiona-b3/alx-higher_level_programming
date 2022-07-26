@@ -4,7 +4,7 @@ class Square:
     """private class attribute"""
     def __init__(self, size=0):
         self.__size = size
-    
+
     @property
     def size(self):
         """gets the current size of a square"""
