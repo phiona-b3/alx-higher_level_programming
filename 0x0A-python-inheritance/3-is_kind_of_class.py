@@ -5,4 +5,5 @@ class ; otherwise False"""
 
 
 def is_kind_of_class(obj, a_class):
+    """checking for the above condition"""
     return isinstance(obj, a_class)
