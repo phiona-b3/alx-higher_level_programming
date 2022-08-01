@@ -3,7 +3,5 @@
 
 
 def is_same_class(obj, a_class):
-    """
-    returns true if the above condition is satisfied else false
-    """
+    """returns true if the above condition is satisfied else false"""
     return type(obj) == a_class
