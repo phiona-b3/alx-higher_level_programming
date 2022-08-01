@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 """checks if object is an exact instance of the specified class"""
 
 
