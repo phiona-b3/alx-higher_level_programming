@@ -10,10 +10,7 @@ class Base(object):
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """__init__ initialized constructor
-        Args:
-            id (int): Defaults to None.
-        """
+        """__init__ initialized constructor"""
         if id is not None:
             self.id = id
         else:
@@ -22,20 +19,14 @@ class Base(object):
 
     @staticmethod
     def to_json_string(list_dict):
-        """Return the JSON serialization of a list of dicts.
-        Args:
-            list_dictionaries (list): A list of dictionaries.
-        """
+        """Return the JSON serialization of a list of dicts"""
         if list_dict is None or len(list_dict) == 0:
             return "[]"
         return json.dumps(list_dict)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save_to_file: writes the JSON string representation of list_objs to a file
-        Args:
-            list_objs (list): list of instances who inherits of Base
-        """
+        """writes the JSON string representation of list_objs to a file"""
         with open(cls.__name__ + '.json', 'w', encoding='utf-8') as f:
             if list_objs is None:
                 f.write('[]')
