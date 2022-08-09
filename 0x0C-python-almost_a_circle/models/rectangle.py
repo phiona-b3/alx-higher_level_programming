@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Contains the "Rectangle" class
-"""
-
+"""Contains the "Rectangle" class"""
 from models.base import Base
 
 
