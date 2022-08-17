@@ -1,7 +1,3 @@
-def islower():
-    c = input("type a word")
-    for s in c:
-        if s.islower():
-            print("True")
-        else:
-            print("False")
+#!/usr/bin/python3
+def islower(c):
+    return(ord('a') <= ord(c) <= ord('z'))
