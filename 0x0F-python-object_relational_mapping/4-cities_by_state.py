@@ -12,8 +12,8 @@ if __name__ = "__main__":
                          charset="utf8")
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name \
-            FROM cities, states WHERE cities.state_id = states.id \
-            ORDER BY cities.id ASC")
+    FROM cities, states WHERE cities.state_id = states.id \
+    ORDER BY cities.id ASC")
     query_rows = cursor.fetchall()
 
     for row in query_rows:
