@@ -1,23 +1,21 @@
 #!/usr/bin/python3
-"""
-takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user
-with the letter as a parameter
-"""
-if __name__ == '__main__':
+"""Use the package request"""
+if __name__ == "__main__":
     import requests
-    from sys import argv
-    if len(argv) == 2:
-        q = argv[1]
+    import sys
+
+    if len(sys.argv) == 1:
+        dic = {'q': ""}
     else:
-        q = ""
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+        dic = {'q': sys.argv[1]}
+
     try:
-        r_dict = r.json()
-        id = r_dict.get('id')
-        name = r_dict.get('name')
-        if len(r_dict) == 0 or not id or not name:
-            print("No result")
+        r = requests.post('http://0.0.0.0:5000/search_user', data=dic)
+        data = r.json()
+
+        if data:
+            print("[{}] {}".format(data.get('id'), data.get('name')))
         else:
-            print("[{}] {}".format(r_dict.get('id'), r_dict.get('name')))
-    except e:
+            print("No result")
+    except ValueError:
         print("Not a valid JSON")
