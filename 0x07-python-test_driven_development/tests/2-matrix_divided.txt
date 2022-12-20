@@ -1,119 +1,115 @@
-==========================
-Matrx Divided Function
-==========================
+# 0-add_integer.txt
 
-''def matrix_divided(matrix, div):'' divide each
-elelemt of the matrix is divided by div and
-return a new matrix with the results with a 2
-precision numbers. If div not is a number raise
-TypeError or ZeroDivisionError if div is 0:
+===========================
+How to Use 0-add_integer.py
+===========================
 
-If matrix not is a list of lists return TypeError.
-If some sub-list aren't a list return TypeError.
-If some element of some sub-list aren't integer
-or float number return TypeError.
+This module defines an integer addition function ``add_integer(a, b=98)``.
 
-Import the function
-=================================================================
-	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+Usage
+=====
 
-==========================
-Type Error
-==========================
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+---------------------
 
-Error for matrix
-=================================================================
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, 3)
-	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> add_integer = __import__('0-add_integer').add_integer
 
-	>>> matrix_divided(matrix, 8)
-	[[0.12, 0.25, 0.38], [0.5, 0.62, 0.75]]
+    >>> add_integer(100, 200)
+    300
 
-	>>> matrix = [23, 44, "hola"]
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> add_integer(11, 39)
+    50
 
+The function receives float numbers
 
-	>>> matrix = [[23, 44], ["hola", "papu"]]
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+::
 
+    >>> add_integer(200.4, 200.1)
+    400
 
-	>>> matrix = [[23, 44, 55], [15, 12]]
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: Each row of the matrix must have the same size
+    >>> add_integer(-31.4, 3)
+    -28
 
+The function receives negative numbers
 
-	>>> matrix = [[23, 44, "paps"], [1, 2]]
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+::
 
+    >>> add_integer(-30, 90)
+    60
 
-	>>> matrix = [[5.5, 4.5, 2.5], [1.5, 4.5, 3.5]]
-	>>> matrix_divided(matrix, 3)
-	[[1.83, 1.5, 0.83], [0.5, 1.5, 1.17]]
+    >>> add_integer(80, -60)
+    20
 
+The function receives numbers from different types of data 
 
-	>>> matrix = [[5.5, 12, 2.5], [1.5, 4, 3.5]]
-	>>> matrix_divided(matrix, 3)
-	[[1.83, 4.0, 0.83], [0.5, 1.33, 1.17]]
+::
 
+    >>> add_integer(8.0, -6)
+    2
 
-	>>> matrix = "hola"
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+    >>> add_integer(34, -70.5)
+    -36
 
+The default value of parameter b is 98. 
+If the function only receives one parameter it will be added to this number
 
-	>>> matrix = {1: 25}
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+::
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(5443443443.6645434)
+    5443443541
+
+Types of errors
+=====
+
+The function does not receive string data
+
+::
+    >>> add_integer("hello world", 43)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
 
-	>>> matrix = []
-	>>> matrix_divided(matrix, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+The function expects you to miss at least one parameter.
+
+::
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+If parameter 'b' is None
+
+::
+    >>> add_integer(2.3, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
 
 
-	>>> matrix_divided(None, 3)
-	Traceback (most recent call last):
-	TypeError: matrix must be a matrix (list of lists) of integers/floats
+If both parameters are neither integer nor float the error will be the following
 
-Div Errors
-==========================
+::
+    >>> add_integer("holberton", "school")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
 
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, None)
-	Traceback (most recent call last):
-	TypeError: div must be a number
+Cannot convert float NaN to integer
 
-
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, [5])
-	Traceback (most recent call last):
-	TypeError: div must be a number
+ ::
+    >>> add_integer(float('NaN'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
 
 
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, {1: 5})
-	Traceback (most recent call last):
-	TypeError: div must be a number
+If the function receives as parameter float('inf')
 
+::
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
 
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, "Hola")
-	Traceback (most recent call last):
-	TypeError: div must be a number
-
-
-	>>> matrix = [[1, 2, 3], [4, 5, 6]]
-	>>> matrix_divided(matrix, 0)
-	Traceback (most recent call last):
-	ZeroDivisionError: division by zero
+    >>> add_integer(-float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
