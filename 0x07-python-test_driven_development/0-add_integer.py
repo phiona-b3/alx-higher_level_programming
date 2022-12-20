@@ -12,4 +12,5 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     if type(num1) is int and type(num2) is int:
+
         return num1 + num2
