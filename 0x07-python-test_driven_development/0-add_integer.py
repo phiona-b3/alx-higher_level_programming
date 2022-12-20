@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def add_integer(a, b=98):
-    """ funtion that adds two integer numbers"""
+    """function that adds two integer numbers"""
     if type(a) in [int, float]:
         num1 = int(a)
     else:
