@@ -1,1 +1,0 @@
-Writing scripts and testing them
